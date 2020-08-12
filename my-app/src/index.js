@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import DataTable from './Data/dataTable';
 import './index.css';
-        
+
 window.onload = function () {
     let gif = document.getElementsByClassName('imageLoad')[0];
     gif.style.display = 'none';
@@ -12,6 +12,16 @@ window.onload = function () {
     html.style.height = '';
     let body = document.querySelector('body');
     body.style = null;
+    body.style.width = 'none';
+    body.style.height = 'none';
+    body.style.display = 'block';
+
+    //     width: 100%;
+    // height: 100%;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
 }
 
 try{
