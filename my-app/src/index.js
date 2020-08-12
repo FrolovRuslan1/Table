@@ -2,13 +2,30 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import DataTable from './Data/dataTable';
 import './index.css';
-
+        
+window.onload = function () {
+    let gif = document.getElementsByClassName('imageLoad')[0];
+    gif.style.display = 'none';
+    let root = document.getElementById('root');
+    root.style.display = 'flex';
+    let html = document.querySelector('html');
+    html.style.height = '';
+    let body = document.querySelector('body');
+    body.style = null;
+}
 
 try{
+
     (async function() {
+
+
+
+
+
+
         const Data = new DataTable();
         let dataJSON = await Data.getDataJSON('http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}');
-
+        console.log(dataJSON)
 
 
 
@@ -19,7 +36,7 @@ try{
 
         class Map extends React.Component {
             static BaseUserInfo = [];
-            static objAddresKeys = [];
+            static objAddressKeys = [];
             static lengthStrings = dataJSON.length;
             constructor(props) {
                 super(props);
@@ -28,7 +45,7 @@ try{
                 }
 
                 for (let key in dataJSON[0].address) {
-                    Map.objAddresKeys.push(key);
+                    Map.objAddressKeys.push(key);
                 }
             }
 
@@ -170,9 +187,9 @@ try{
 
                 for (let i = 0, current = 0; i < this.BaseUserInfo.length; i++, current++) {
                     if (this.BaseUserInfo[i] === 'address') {
-                        for (let j = 0; j < Map.objAddresKeys.length; j++, current++) {
+                        for (let j = 0; j < Map.objAddressKeys.length; j++, current++) {
                             Inputs.elements.push(
-                                <input key={current} type="text" placeholder={Map.objAddresKeys[j]} onChange={this.functionsAddress[j]}>
+                                <input key={current} type="text" placeholder={Map.objAddressKeys[j]} onChange={this.functionsAddress[j]}>
                                 </input>
                             );
                         }
@@ -578,9 +595,9 @@ try{
 
                 for (let i = 0; i < Map.BaseUserInfo.length; i++) {
                     if (Map.BaseUserInfo[i] === 'address') {
-                        for (let j = 0; j < Map.objAddresKeys.length; j++) {
+                        for (let j = 0; j < Map.objAddressKeys.length; j++) {
                             View.keys.push(
-                                Map.objAddresKeys[j]
+                                Map.objAddressKeys[j]
                             );
                         }
                     }else {
@@ -630,7 +647,7 @@ try{
 
 
 
-        ReactDOM.render(<Map/>, document.getElementById('root'));
+        ReactDOM.render(<Map style={Map.style}/>, document.getElementById('root'));
     })()
 }catch(error) {
     console.log(error);
