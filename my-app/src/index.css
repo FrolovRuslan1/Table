@@ -1,4 +1,95 @@
-td {
-    height: 10px;
-    width: 10px;
+* {
+
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+table {
+    width: 1000px;
+    background-color: #fcff8c;
+}
+
+tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: #e8c112;
+}
+
+tr:active {
+    background-color: #fbe51c;
+}
+
+td  {
+    height: inherit;
+    width: 50px;
+    outline: 1px solid black;
+    flex-grow: 1;
+    text-align: center;
+
+}
+
+.Sort {
+    height: 50px;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: auto;
+    height: inherit;
+    flex-grow: 1;
+}
+
+.inputs {
+    height: 50px;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    height: 30px;
+    width: 14%;
+}
+
+.view {
+    height: 500px;
+    width: 450px;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: darkseagreen;
+}
+
+.view__block {
+    height: 100px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.view__block__content {
+    outline: 1px solid black;
+    background-color: #c8ff70;
 }
