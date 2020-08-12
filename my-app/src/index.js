@@ -15,13 +15,6 @@ window.onload = function () {
     body.style.width = 'none';
     body.style.height = 'none';
     body.style.display = 'block';
-
-    //     width: 100%;
-    // height: 100%;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // flex-direction: column;
 }
 
 try{
@@ -85,7 +78,7 @@ try{
             render() {
                 return (
                     <div>
-                        <input type="text" placeholder={'Chose count strings'}></input>
+                        <input type="text" placeholder={'number'}></input>
                         <button onClick={this.click}>CountStrings</button>
                     </div>
                 );
